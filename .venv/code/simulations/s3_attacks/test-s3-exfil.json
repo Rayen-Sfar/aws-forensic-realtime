@@ -1,0 +1,15 @@
+[
+  {
+    "eventName": "GetObject",
+    "eventTime": "2025-08-28T18:59:00Z",
+    "sourceIPAddress": "203.0.113.1",
+    "userIdentity": {
+      "type": "IAMUser",
+      "userName": "test-user"
+    },
+    "requestParameters": {
+      "bucketName": "sensitive-data-financial",
+      "key": "file1.txt"
+    }
+  }
+]

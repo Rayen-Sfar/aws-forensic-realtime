@@ -1,0 +1,67 @@
+[
+  {
+    "id": "IAM_001",
+    "name": "Unauthorized IAM Access Key Creation",
+    "description": "Détecte la création de clés IAM depuis une IP non autorisée ou blacklistée",
+    "category": "IAM_COMPROMISE",
+    "condition": {
+      "eventName": "CreateAccessKey",
+      "sourceIP": {
+        "notInAllowedCIDRs": ["10.0.0.0/8", "192.168.0.0/16", "172.16.0.0/12"],
+        "checkOTX": true,
+        "checkReputation": true
+      },
+      "timeWindow": "5m"
+    },
+    "severity": "CRITICAL",
+    "priority": 1,
+    "recommendedActions": [
+      "Revoke the access key immediately",
+      "Investigate the user account for further compromise",
+      "Block the source IP in Security Groups",
+      "Check for other suspicious activities from same user"
+    ],
+    "mitre": "T1098.001"
+  },
+  {
+    "id": "S3_001", 
+    "name": "Massive S3 Data Exfiltration",
+    "description": "Téléchargement massif depuis un bucket sensible",
+    "category": "DATA_EXFILTRATION",
+    "condition": {
+      "eventName": "GetObject",
+      "bucketNamePrefix": "sensitive-data-",
+      "threshold": {
+        "count": 50,
+        "window_minutes": 5,
+        "bytesThreshold": 1000000000
+      },
+      "excludeUsers": ["backup-service", "analytics-user"]
+    },
+    "severity": "HIGH",
+    "priority": 2,
+    "recommendedActions": [
+      "Restrict bucket permissions to read-only",
+      "Identify the source of the request (IP/user)",
+      "Check for data encryption status",
+      "Review bucket access logs"
+    ],
+    "mitre": "T1530"
+  },
+{
+    "id": "EC2_001",
+    "name": "EC2 Instance Launch (Potential Cryptojacking)",
+    "description": "Suspicious instance launch, requires enrichment to confirm.",
+    "category": "CRYPTOJACKING",
+    "mitre": "T1496",
+    "priority": 2,
+    "condition": {
+      "eventName": ["RunInstances", "StartInstances"]
+    },
+    "severity": "HIGH",
+    "recommendedActions": [
+      "Inspect the instance for unusual processes.",
+      "Check CPU metrics and network traffic."
+    ]
+  }
+]

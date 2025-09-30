@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-26T18:12:10.153770",
+    "analyzer_version": "2.0",
+    "total_alerts": 1,
+    "severity_breakdown": {
+      "CRITICAL": 1
+    }
+  },
+  "alerts": [
+    {
+      "rule_id": "IAM_001",
+      "rule_name": "Unauthorized IAM Access Key Creation",
+      "severity": "CRITICAL",
+      "category": "IAM_COMPROMISE",
+      "event_details": {
+        "eventName": "CreateAccessKey",
+        "sourceIP": "192.0.2.1",
+        "userIdentity": {
+          "type": "IAMUser",
+          "userName": "test-user"
+        },
+        "eventTime": "2025-08-26T14:30:00Z",
+        "requestParameters": {},
+        "responseElements": {},
+        "eventId": null,
+        "awsRegion": "us-east-1"
+      },
+      "recommended_actions": [
+        "Revoke the access key immediately",
+        "Investigate the user account for further compromise",
+        "Block the source IP in Security Groups",
+        "Check for other suspicious activities from same user"
+      ],
+      "mitre_technique": "T1098.001",
+      "priority": 1,
+      "timestamp": "2025-08-26T14:30:00Z",
+      "is_malicious_ip": true,
+      "ip_reputation": {
+        "otx": {
+          "is_malicious": true,
+          "reputation_score": 0,
+          "threat_count": 19,
+          "source": "OTX"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "critical_alerts": 1,
+    "high_alerts": 0,
+    "categories": {
+      "IAM_COMPROMISE": 1
+    }
+  }
+}

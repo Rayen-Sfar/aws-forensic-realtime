@@ -1,0 +1,415 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-31T19:24:33.097051",
+    "analyzer_version": "2.0",
+    "total_alerts": 8,
+    "severity_breakdown": {
+      "HIGH": 8
+    }
+  },
+  "alerts": [
+    {
+      "rule_id": "EC2_001",
+      "rule_name": "EC2 Instance Launch (Potential Cryptojacking)",
+      "severity": "HIGH",
+      "category": "CRYPTOJACKING",
+      "event_details": {
+        "eventName": "RunInstances",
+        "sourceIP": null,
+        "userIdentity": {
+          "type": "IAMUser",
+          "principalId": "AIDA35XS57RR6HIT6DMBQ",
+          "arn": "arn:aws:iam::819774487651:user/forensic-user",
+          "accountId": "819774487651",
+          "accessKeyId": "AKIA35XS57RRVEEF3Q7N",
+          "userName": "forensic-user"
+        },
+        "eventTime": "2025-08-30 21:17:20+01:00",
+        "requestParameters": {
+          "instancesSet": {
+            "items": [
+              {
+                "imageId": "i-03be7dd7a9d009b38",
+                "minCount": 1,
+                "maxCount": 1,
+                "keyName": "C:\\Users\\Rayen\\Downloads\\test-key.pem"
+              }
+            ]
+          },
+          "groupSet": {
+            "items": [
+              {
+                "groupName": "default"
+              }
+            ]
+          },
+          "instanceType": "t2.micro",
+          "blockDeviceMapping": {},
+          "monitoring": {
+            "enabled": false
+          },
+          "disableApiTermination": false,
+          "disableApiStop": false,
+          "clientToken": "9b4c7d9f-f071-4b92-af3d-e80bc5904c0a"
+        },
+        "responseElements": null,
+        "eventId": "797680e3-370b-4b33-9015-085d3ce703ac",
+        "awsRegion": "eu-north-1"
+      },
+      "recommended_actions": [
+        "Inspect the instance for unusual processes.",
+        "Check CPU metrics and network traffic."
+      ],
+      "mitre_technique": "T1496",
+      "priority": 2,
+      "timestamp": "2025-08-30 21:17:20+01:00"
+    },
+    {
+      "rule_id": "EC2_001",
+      "rule_name": "EC2 Instance Launch (Potential Cryptojacking)",
+      "severity": "HIGH",
+      "category": "CRYPTOJACKING",
+      "event_details": {
+        "eventName": "RunInstances",
+        "sourceIP": null,
+        "userIdentity": {
+          "type": "IAMUser",
+          "principalId": "AIDA35XS57RR6HIT6DMBQ",
+          "arn": "arn:aws:iam::819774487651:user/forensic-user",
+          "accountId": "819774487651",
+          "accessKeyId": "AKIA35XS57RRVEEF3Q7N",
+          "userName": "forensic-user"
+        },
+        "eventTime": "2025-08-30 21:14:39+01:00",
+        "requestParameters": {
+          "instancesSet": {
+            "items": [
+              {
+                "imageId": "ami-03be7dd7a9d009b38",
+                "minCount": 1,
+                "maxCount": 1,
+                "keyName": "my-key"
+              }
+            ]
+          },
+          "groupSet": {
+            "items": [
+              {
+                "groupName": "default"
+              }
+            ]
+          },
+          "instanceType": "t2.micro",
+          "blockDeviceMapping": {},
+          "monitoring": {
+            "enabled": false
+          },
+          "disableApiTermination": false,
+          "disableApiStop": false,
+          "clientToken": "fc531927-87f9-48c4-a946-b36f4bd1401a"
+        },
+        "responseElements": null,
+        "eventId": "543c3547-c514-43db-b52e-2c7f334199c5",
+        "awsRegion": "eu-north-1"
+      },
+      "recommended_actions": [
+        "Inspect the instance for unusual processes.",
+        "Check CPU metrics and network traffic."
+      ],
+      "mitre_technique": "T1496",
+      "priority": 2,
+      "timestamp": "2025-08-30 21:14:39+01:00"
+    },
+    {
+      "rule_id": "EC2_001",
+      "rule_name": "EC2 Instance Launch (Potential Cryptojacking)",
+      "severity": "HIGH",
+      "category": "CRYPTOJACKING",
+      "event_details": {
+        "eventName": "RunInstances",
+        "sourceIP": null,
+        "userIdentity": {
+          "type": "IAMUser",
+          "principalId": "AIDA35XS57RR6HIT6DMBQ",
+          "arn": "arn:aws:iam::819774487651:user/forensic-user",
+          "accountId": "819774487651",
+          "accessKeyId": "AKIA35XS57RRVEEF3Q7N",
+          "userName": "forensic-user"
+        },
+        "eventTime": "2025-08-30 21:14:26+01:00",
+        "requestParameters": {
+          "instancesSet": {
+            "items": [
+              {
+                "imageId": "ami-03be7dd7a9d009b38",
+                "minCount": 1,
+                "maxCount": 1,
+                "keyName": "my-key"
+              }
+            ]
+          },
+          "groupSet": {
+            "items": [
+              {
+                "groupName": "default"
+              }
+            ]
+          },
+          "instanceType": "t2.micro",
+          "blockDeviceMapping": {},
+          "monitoring": {
+            "enabled": false
+          },
+          "disableApiTermination": false,
+          "disableApiStop": false,
+          "clientToken": "8aac54d6-32e5-4e81-8e2d-099bfc9d06c1"
+        },
+        "responseElements": null,
+        "eventId": "6b5a823b-efcf-4a22-b4d7-9238dcf08d54",
+        "awsRegion": "eu-north-1"
+      },
+      "recommended_actions": [
+        "Inspect the instance for unusual processes.",
+        "Check CPU metrics and network traffic."
+      ],
+      "mitre_technique": "T1496",
+      "priority": 2,
+      "timestamp": "2025-08-30 21:14:26+01:00"
+    },
+    {
+      "rule_id": "EC2_001",
+      "rule_name": "EC2 Instance Launch (Potential Cryptojacking)",
+      "severity": "HIGH",
+      "category": "CRYPTOJACKING",
+      "event_details": {
+        "eventName": "RunInstances",
+        "sourceIP": null,
+        "userIdentity": {
+          "type": "IAMUser",
+          "principalId": "AIDA35XS57RR6HIT6DMBQ",
+          "arn": "arn:aws:iam::819774487651:user/forensic-user",
+          "accountId": "819774487651",
+          "accessKeyId": "AKIA35XS57RRVEEF3Q7N",
+          "userName": "forensic-user"
+        },
+        "eventTime": "2025-08-30 21:10:29+01:00",
+        "requestParameters": null,
+        "responseElements": null,
+        "eventId": "620f018d-e1e8-4561-a564-1cdf48792f62",
+        "awsRegion": "eu-north-1"
+      },
+      "recommended_actions": [
+        "Inspect the instance for unusual processes.",
+        "Check CPU metrics and network traffic."
+      ],
+      "mitre_technique": "T1496",
+      "priority": 2,
+      "timestamp": "2025-08-30 21:10:29+01:00"
+    },
+    {
+      "rule_id": "EC2_001",
+      "rule_name": "EC2 Instance Launch (Potential Cryptojacking)",
+      "severity": "HIGH",
+      "category": "CRYPTOJACKING",
+      "event_details": {
+        "eventName": "RunInstances",
+        "sourceIP": null,
+        "userIdentity": {
+          "type": "IAMUser",
+          "principalId": "AIDA35XS57RR6HIT6DMBQ",
+          "arn": "arn:aws:iam::819774487651:user/forensic-user",
+          "accountId": "819774487651",
+          "accessKeyId": "AKIA35XS57RRVEEF3Q7N",
+          "userName": "forensic-user"
+        },
+        "eventTime": "2025-08-30 21:17:20+01:00",
+        "requestParameters": {
+          "instancesSet": {
+            "items": [
+              {
+                "imageId": "i-03be7dd7a9d009b38",
+                "minCount": 1,
+                "maxCount": 1,
+                "keyName": "C:\\Users\\Rayen\\Downloads\\test-key.pem"
+              }
+            ]
+          },
+          "groupSet": {
+            "items": [
+              {
+                "groupName": "default"
+              }
+            ]
+          },
+          "instanceType": "t2.micro",
+          "blockDeviceMapping": {},
+          "monitoring": {
+            "enabled": false
+          },
+          "disableApiTermination": false,
+          "disableApiStop": false,
+          "clientToken": "9b4c7d9f-f071-4b92-af3d-e80bc5904c0a"
+        },
+        "responseElements": null,
+        "eventId": "797680e3-370b-4b33-9015-085d3ce703ac",
+        "awsRegion": "eu-north-1"
+      },
+      "recommended_actions": [
+        "Inspect the instance for unusual processes.",
+        "Check CPU metrics and network traffic."
+      ],
+      "mitre_technique": "T1496",
+      "priority": 2,
+      "timestamp": "2025-08-30 21:17:20+01:00"
+    },
+    {
+      "rule_id": "EC2_001",
+      "rule_name": "EC2 Instance Launch (Potential Cryptojacking)",
+      "severity": "HIGH",
+      "category": "CRYPTOJACKING",
+      "event_details": {
+        "eventName": "RunInstances",
+        "sourceIP": null,
+        "userIdentity": {
+          "type": "IAMUser",
+          "principalId": "AIDA35XS57RR6HIT6DMBQ",
+          "arn": "arn:aws:iam::819774487651:user/forensic-user",
+          "accountId": "819774487651",
+          "accessKeyId": "AKIA35XS57RRVEEF3Q7N",
+          "userName": "forensic-user"
+        },
+        "eventTime": "2025-08-30 21:14:39+01:00",
+        "requestParameters": {
+          "instancesSet": {
+            "items": [
+              {
+                "imageId": "ami-03be7dd7a9d009b38",
+                "minCount": 1,
+                "maxCount": 1,
+                "keyName": "my-key"
+              }
+            ]
+          },
+          "groupSet": {
+            "items": [
+              {
+                "groupName": "default"
+              }
+            ]
+          },
+          "instanceType": "t2.micro",
+          "blockDeviceMapping": {},
+          "monitoring": {
+            "enabled": false
+          },
+          "disableApiTermination": false,
+          "disableApiStop": false,
+          "clientToken": "fc531927-87f9-48c4-a946-b36f4bd1401a"
+        },
+        "responseElements": null,
+        "eventId": "543c3547-c514-43db-b52e-2c7f334199c5",
+        "awsRegion": "eu-north-1"
+      },
+      "recommended_actions": [
+        "Inspect the instance for unusual processes.",
+        "Check CPU metrics and network traffic."
+      ],
+      "mitre_technique": "T1496",
+      "priority": 2,
+      "timestamp": "2025-08-30 21:14:39+01:00"
+    },
+    {
+      "rule_id": "EC2_001",
+      "rule_name": "EC2 Instance Launch (Potential Cryptojacking)",
+      "severity": "HIGH",
+      "category": "CRYPTOJACKING",
+      "event_details": {
+        "eventName": "RunInstances",
+        "sourceIP": null,
+        "userIdentity": {
+          "type": "IAMUser",
+          "principalId": "AIDA35XS57RR6HIT6DMBQ",
+          "arn": "arn:aws:iam::819774487651:user/forensic-user",
+          "accountId": "819774487651",
+          "accessKeyId": "AKIA35XS57RRVEEF3Q7N",
+          "userName": "forensic-user"
+        },
+        "eventTime": "2025-08-30 21:14:26+01:00",
+        "requestParameters": {
+          "instancesSet": {
+            "items": [
+              {
+                "imageId": "ami-03be7dd7a9d009b38",
+                "minCount": 1,
+                "maxCount": 1,
+                "keyName": "my-key"
+              }
+            ]
+          },
+          "groupSet": {
+            "items": [
+              {
+                "groupName": "default"
+              }
+            ]
+          },
+          "instanceType": "t2.micro",
+          "blockDeviceMapping": {},
+          "monitoring": {
+            "enabled": false
+          },
+          "disableApiTermination": false,
+          "disableApiStop": false,
+          "clientToken": "8aac54d6-32e5-4e81-8e2d-099bfc9d06c1"
+        },
+        "responseElements": null,
+        "eventId": "6b5a823b-efcf-4a22-b4d7-9238dcf08d54",
+        "awsRegion": "eu-north-1"
+      },
+      "recommended_actions": [
+        "Inspect the instance for unusual processes.",
+        "Check CPU metrics and network traffic."
+      ],
+      "mitre_technique": "T1496",
+      "priority": 2,
+      "timestamp": "2025-08-30 21:14:26+01:00"
+    },
+    {
+      "rule_id": "EC2_001",
+      "rule_name": "EC2 Instance Launch (Potential Cryptojacking)",
+      "severity": "HIGH",
+      "category": "CRYPTOJACKING",
+      "event_details": {
+        "eventName": "RunInstances",
+        "sourceIP": null,
+        "userIdentity": {
+          "type": "IAMUser",
+          "principalId": "AIDA35XS57RR6HIT6DMBQ",
+          "arn": "arn:aws:iam::819774487651:user/forensic-user",
+          "accountId": "819774487651",
+          "accessKeyId": "AKIA35XS57RRVEEF3Q7N",
+          "userName": "forensic-user"
+        },
+        "eventTime": "2025-08-30 21:10:29+01:00",
+        "requestParameters": null,
+        "responseElements": null,
+        "eventId": "620f018d-e1e8-4561-a564-1cdf48792f62",
+        "awsRegion": "eu-north-1"
+      },
+      "recommended_actions": [
+        "Inspect the instance for unusual processes.",
+        "Check CPU metrics and network traffic."
+      ],
+      "mitre_technique": "T1496",
+      "priority": 2,
+      "timestamp": "2025-08-30 21:10:29+01:00"
+    }
+  ],
+  "summary": {
+    "critical_alerts": 0,
+    "high_alerts": 8,
+    "categories": {
+      "CRYPTOJACKING": 8
+    }
+  }
+}

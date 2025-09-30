@@ -1,0 +1,27 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "userName": "forensic-user",
+        "arn": "arn:aws:iam::123456789012:user/forensic-user"
+      },
+      "eventTime": "2025-08-24T14:30:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreateAccessKey",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "192.0.2.1",
+      "userAgent": "aws-cli/2.9.0",
+      "requestParameters": {
+        "userName": "forensic-user"
+      },
+      "responseElements": {
+        "accessKey": {
+          "accessKeyId": "AKIAFAKEKEY12345",
+          "status": "Active"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-28T18:40:07.416496",
+    "analyzer_version": "2.0",
+    "total_alerts": 1,
+    "severity_breakdown": {
+      "HIGH": 1
+    }
+  },
+  "alerts": [
+    {
+      "rule_id": "S3_001",
+      "rule_name": "Massive S3 Data Exfiltration",
+      "severity": "HIGH",
+      "category": "DATA_EXFILTRATION",
+      "source_ip": [
+        "203.0.113.1",
+        "sensitive-data-financial"
+      ],
+      "bucket": "sensitive-data-financial",
+      "event_count": 75,
+      "time_window": "5min",
+      "first_event_time": "2025-08-24T15:00:00Z",
+      "recommended_actions": [
+        "Restrict bucket permissions to read-only",
+        "Identify the source of the request (IP/user)",
+        "Check for data encryption status",
+        "Review bucket access logs"
+      ],
+      "mitre_technique": "T1530",
+      "priority": 2
+    }
+  ],
+  "summary": {
+    "critical_alerts": 0,
+    "high_alerts": 1,
+    "categories": {
+      "DATA_EXFILTRATION": 1
+    }
+  }
+}

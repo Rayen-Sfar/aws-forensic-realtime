@@ -1,0 +1,25 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "userName": "malicious_user"
+      },
+      "eventTime": "2025-09-10T12:30:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreateAccessKey",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "192.0.2.1",
+      "userAgent": "aws-cli/2.0",
+      "requestParameters": {
+        "userName": "malicious_user"
+      },
+      "responseElements": {
+        "accessKey": {
+          "accessKeyId": "AKIAEXAMPLE"
+        }
+      }
+    }
+  ]
+}
